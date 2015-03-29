@@ -11,6 +11,7 @@ Our overarching goals are conciseness, readability, and simplicity.
 ## Table of Contents
 
 * [Naming](#naming)
+	* [Class Prefixes](#class-prefixes)
 
 ## Naming
 
@@ -56,6 +57,26 @@ For methods, follow the standard Apple convention of referring to the first para
 class Guideline {
   func combineWithString(incoming: String, options: Dictionary?) { ... }
   func upvoteBy(amount: Int) { ... }
+}
+```
+
+### Class Prefixes
+
+Swift types are all automatically namespaced by the module that contains them. As a result, prefixes are not required in order to minimize naming collisions. If two names from different modules collide you can disambiguate by prefixing the type name with the module name:
+
+```swift
+import MyModule
+
+var myClass = MyModule.MyClass()
+```
+
+You **should not** add prefixes to your Swift types.
+
+If you need to expose a Swift type for use within Objective-C you can provide a suitable prefix as follows:
+
+```swift
+@objc (MKPerson) class Person {
+   ...
 }
 ```
 
