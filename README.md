@@ -11,6 +11,7 @@ Our overarching goals are conciseness, readability, and simplicity.
 ## Table of Contents
 
 * [Naming](#naming)
+* [Spacing](#spacing)
 
 ## Naming
 
@@ -58,6 +59,36 @@ class Guideline {
   func upvoteBy(amount: Int) { ... }
 }
 ```
+
+## Spacing
+
+* Indent using 4 spaces rather than tabs. That's the default for Xcode:
+
+  ![Xcode indent settings](images/xcode_indentation.png)
+
+* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
+
+**Preferred:**
+```swift
+if user.isHappy {
+  //Do something
+} else {
+  //Do something else
+}
+```
+
+**Not Preferred:**
+```swift
+if user.isHappy
+{
+    //Do something
+}
+else {
+    //Do something else
+}
+```
+
+* There should be at least one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
 
 ## Credits
 
